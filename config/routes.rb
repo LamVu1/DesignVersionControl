@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resource :user, only: [:create, :update, :show]
 
     resource :session, only: [:create, :destroy]
+
+    resources :galleries
+
     
   end
 
