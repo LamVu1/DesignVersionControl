@@ -19,7 +19,7 @@ class UploadPage extends React.Component{
     }
     
     handleChange(e){
-        console.log(this.state)
+        // console.log(this.state)
         const { name, value } = e.target;
         this.setState({ [name]: value });
     }

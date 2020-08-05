@@ -25,7 +25,7 @@ export const login = user => {
   }
     
   export const signup = user => {
-    console.log(user)
+    // console.log(user)
     return(
       $.ajax(
         {
