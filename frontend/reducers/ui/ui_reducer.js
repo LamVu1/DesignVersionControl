@@ -12,12 +12,12 @@ const uiReducer = (oldstate=INITIAL_STATE, action)=>{
         case OPEN_MODAL:
             return {
                 ...oldstate,
-                ui: !oldstate.ui,
+                hidden: !oldstate.hidden,
                 data: action.data}
         case CLOSE_MODAL:
             return{
                 ...oldstate,
-                ui: !oldstate.ui
+                hidden: !oldstate.hidden
             };
         default:
             return oldstate;

@@ -18,12 +18,21 @@ export const fetchGallery = (gallery_id)=>(dispatch)=>(
     APIUtil.fetchGallery(gallery_id).then( gallery => dispatch(receiveGallery(gallery)))
 )
 
-export const fetchGalleries = ()=>(dispatch)=>(
-    APIUtil.fetchGalleries().then( galleries => dispatch(receiveGalleries(galleries)))
-)
+export const fetchGalleries = ()=>(dispatch)=>{
+    return(
+        APIUtil.fetchGalleries().then( galleries =>  dispatch(receiveGalleries(galleries)))
+    )
+}
+
 
 export const createGallery = (gallery)=>(dispatch)=>{
     return(
     APIUtil.createGallery(gallery).then(gallery=> dispatch(receiveGallery(gallery))))
+}
+
+
+export const updateGallery = (gallery)=>(dispatch)=>{
+    return(
+    APIUtil.updateGallery(gallery).then(gallery=> dispatch(receiveGallery(gallery))))
 }
 

@@ -33,8 +33,22 @@ export const fetchGallery= (gallery_id) => {
         $.ajax(
             {
                 method: 'GET',
-                url: `/api/galleries/{gallery_id}`
+                url: `/api/galleries/${gallery_id}`
             }
         )
     )
+};
+
+
+export const updateGallery = (gallery) => {
+  
+  return(
+    $.ajax(
+      {
+        method: 'PATCH',
+        url: `/api/galleries/${gallery.id}`,
+        data: gallery
+      }
+    )
+  )
 };

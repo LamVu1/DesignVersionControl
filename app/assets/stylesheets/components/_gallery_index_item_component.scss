@@ -1,0 +1,22 @@
+.gallery-index-img{
+    height: 90%;
+    width: 100%;
+}
+
+.gallery-item{
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    margin: 10px 10px;
+    border: #c3c0c0 solid thin;
+    box-shadow: 3px 4px 7px 4px rgba(2, 2, 2, 0.2);
+}
+
+
+.gallery-item-title{
+    height: 10%;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

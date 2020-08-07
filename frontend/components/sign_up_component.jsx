@@ -26,13 +26,24 @@ class SignUp extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    // console.log(user)
-    this.props.signup(user)
+    this.props.signup(user).then( res => 
+      {
+          
+      this.props.history.push('/main')})
   }
 
   render() {
 
     const {username, password} = this.state;
+
+//     <div className='sign-up'>
+// <h1>Sign Up</h1>
+// <form className='sign-up-form'>
+//   <input type="text" name='username' placeholder='Username' value={username} onChange={this.handleChange}/>
+//   <input type="text" name='password' placeholder='Password' value={password} onChange={this.handleChange}/>
+//   <button onClick={this.handleSubmit}>Submit</button>      
+// </form>
+// </div>
 
     return (
       <div className='sign-up'>
@@ -40,9 +51,11 @@ class SignUp extends React.Component {
           <form className='sign-up-form'>
             <input type="text" name='username' placeholder='Username' value={username} onChange={this.handleChange}/>
             <input type="text" name='password' placeholder='Password' value={password} onChange={this.handleChange}/>
-            <button onClick={this.handleSubmit}>Submit</button>      
+            <button onClick={this.handleSubmit}>Sign Up</button>      
         </form>
       </div>
+
+
     );
   }
 }
@@ -62,4 +75,4 @@ const mapStateToProps = (state, ownProps) => {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps )(SignUp);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps )(SignUp));

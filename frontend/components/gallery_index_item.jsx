@@ -11,11 +11,12 @@ class GalleryIndexItem extends React.Component {
 
   render() {
 
-    let {title, images, openModal} = this.props
+    let {title, images, openModal, id, state, lastupdate} = this.props
 
+    
     return (
-      <div className='gallery-item' onClick={openModal}>
-        <p>{title}</p>
+      <div className='gallery-item' onClick={()=>{openModal({lastupdate: lastupdate, state:state, id: id, title: title, images: images})}}>
+        <div className='gallery-item-title'>{title}</div>
         <img className='gallery-index-img' src= {images[0]} alt=""/>
       </div>
     );
@@ -26,17 +27,6 @@ class GalleryIndexItem extends React.Component {
 const mapDispatchToProps = dispatch => ({
   openModal: (data)=>dispatch(openModal(data))
 })
-
-// const mapStateToProps = (state, ownProps) => {
-  
-//   return(
-//     { 
-//       state: state,
-//     }
-//   )
-// }
-
-// export default GalleryIndexItem
 
 
 export default connect(null, mapDispatchToProps)(GalleryIndexItem);

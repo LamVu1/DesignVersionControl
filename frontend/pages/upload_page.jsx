@@ -15,11 +15,15 @@ class UploadPage extends React.Component{
         this.handleFile = this.handleFile.bind(this);
         this.removeImage = this.removeImage.bind(this);
         this.previewImage = this.previewImage.bind(this);
+        this.handleLink = this.handleLink.bind(this);
 
     }
+
+    handleLink(){
+        this.props.history.push('main')
+      }
     
     handleChange(e){
-        // console.log(this.state)
         const { name, value } = e.target;
         this.setState({ [name]: value });
     }
@@ -33,9 +37,9 @@ class UploadPage extends React.Component{
             formData.append('gallery[images][]', this.state.images[i]);
         }
 
-        this.props.createGallery(formData).then((res)=> {this.props.history.push('/main')})
+        this.props.createGallery(formData).then(res=> {this.props.history.push('/main')})
 
-    }
+    } 
 
     handleFile(e){  
         if(this.state.images.length<5){
@@ -56,9 +60,9 @@ class UploadPage extends React.Component{
     previewImage(){
         let prev = this.state.preview.map((prev,idx)=>{
             return(
-            <div className="Preview-Images-Container" key={idx}>
+            <div className="Preview-Image-Container" key={idx}>
                 <img className="Preview-Image" src={prev}/>
-                <button className="Remove-Image" onClick={()=>{this.removeImage(idx)}}>Remove Image</button>
+                <div className="Remove-Image-btn" onClick={()=>{this.removeImage(idx)}}>X</div>
             </div>
             )
         })
@@ -68,30 +72,53 @@ class UploadPage extends React.Component{
     render(){
 
         return(
-            <div>
-                <h1>UPLOAD PAGE</h1>
-                <Link to={`/main`}>Home</Link>
-                <p>Maximum Image Upload: 5</p>    
-                <form >
+            <div className='Upload-Page'>
+                
+                <div className='Nav-Empty'></div>
+        
+                
+                <form className='Upload-Form-Container'>
+                    <div className='Upload-Form'>
+                    <div className='Upload-Form-Title-Div'>
+                    <label>Title: </label>
                     <input  type="text" name="title" value={this.state.title} multiple onChange={this.handleChange}/>
-                <input className='input-file' type="file" onChange={this.handleFile}/>      
-                <button onClick={this.handleSubmit}>Submit</button>      
-                </form>
+                    <div>Maximum Image Upload: 5</div>    
+
+                    </div>
+                    <div className='input-file-div'><div className='input-file-p'>
+                    Choose Image
+                    </div>
+                      
+                        <input className='input-file' type="file" onChange={this.handleFile}/>    
+                    </div>
+
+                    </div>
 
                 {this.state.images===[]
 
-                    ? <div></div>
+                ? <div></div>
 
-                    : <div className="Preview-Container">
+                : <div className="Preview-Container">
 
-                        <p>Preview:</p>
+                        <div className="Preview-Container-P">Preview:</div>
                         <div className='Preview-Images-Container'>
-                            {this.previewImage()}
+                        {this.previewImage()}
                         </div>
-                      
-                 
+
+
                     </div>
                 }
+
+                </form>
+                <div className='upload-page-bottom-div'>
+                <button className='Upload-Page-btn' onClick={this.handleLink}>
+                    Go Back Home
+                </button>
+                <button className='Upload-Page-btn' onClick={this.handleSubmit}>Create Gallery</button>      
+              
+                </div>
+
+              
             </div>
         )
     }

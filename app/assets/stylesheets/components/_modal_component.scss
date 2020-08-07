@@ -1,0 +1,56 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.555);
+      overflow: hidden;
+    }
+   
+.modal-child-container {
+    // margin-top: 20px;
+    // margin-bottom: 20px;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // background-color: #f4f4f4;
+    background-color: rgba(0, 0, 0, 0.555);;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // width: 800px;
+    width: 100vw;
+    height: 100vh;
+    height: -webkit-fill-available;
+    overflow-y: scroll;
+}
+
+.modal-child{
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+   
+    // .PostContainer{
+    //   width: 50%;
+    //   background-color: wheat;
+      
+    // }
+  .close-x{
+    background-color:transparent;
+    position: fixed;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    padding: 5px;
+    color: grey;
+  }
+  .close-x i {
+    font-size: 35px;
+  }

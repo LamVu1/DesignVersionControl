@@ -12,6 +12,14 @@ class User < ApplicationRecord
     class_name: :Gallery,
     foreign_key: :user_id
 
+    has_many :comments,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Comment
+
+    has_one :admin,
+    class_name: :Admin,
+    foreign_key: :user_id
   
     def self.find_by_credentials(username, password)
       user = User.find_by(username: username)

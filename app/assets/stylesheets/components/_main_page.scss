@@ -1,0 +1,154 @@
+.Main-Page{
+    background-color: #E9EAEC;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Top-Container{
+    height: 10%;
+}
+
+.Nav{
+    background-color: #333652;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.Nav-Username{
+    color: white;
+}
+
+.Log-Out-btn{
+    background-color: white;
+    margin-right: 30px;
+    height: 40px;
+    width: 80px;
+    border-radius: 3pt;
+    font-family: sans-serif;
+    font-weight: bold;
+
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(235, 230, 230);
+    }
+}
+
+.Upload-Page-btn{
+    background-color: #FAD02C;
+    margin-right: 30px;
+    height: 40px;
+    width: 100px;
+    text-decoration: none;
+    border-radius: 3pt;
+    color: white;
+
+    &:hover{
+        cursor: pointer;
+        background-color: red;
+
+    }
+}
+
+
+.Gallery-Index{
+    display: flex;
+    flex-wrap: wrap;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.925);
+}
+
+.Not-Accepted{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    // border: blue solid;
+    box-sizing: border-box;
+}
+
+.Container-Headers{
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+}
+
+.inprogress-header{
+    background-color: #b9b9b9;
+}
+
+.accepted-header{
+    background-color: #29b929;
+}
+
+.rejected-header{
+    background-color: red;
+}
+
+
+
+.Inprogress-Container{
+    height: 50%;
+    border: rgb(217, 221, 217) solid;
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    flex-direction: column;
+    box-sizing: border-box;
+    // overflow-x: auto;
+}
+
+.Inprogress{
+    // overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+    margin-left: 20px;
+}
+
+
+
+.Rejected-Container{
+    height: 50%;
+    border: rgb(217, 221, 217) solid;
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.Rejected{
+    // overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+}
+
+.Accepted-Container{
+    width: 50%;
+    border: rgb(217, 221, 217) solid;
+    box-sizing: border-box;
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    flex-direction: column;
+    // overflow-y: auto;
+}
+
+.Accepted{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content: space-evenly;
+}
+
+.empty-div{
+    height: 300px;
+    width: 300px;
+    margin: 0px 10px;
+}

@@ -26,10 +26,11 @@ class Api::GalleriesController < ApplicationController
     end
 
     def show    
-        @gallery = Gallery.where(id: params[:gallery_id])
+        
+        @gallery = Gallery.find(params[:id])
         
         if @gallery
-            render :index
+            render "api/galleries/show"
         else
             render json: @gallery.errors.full_messages, status: 422
         end
@@ -39,7 +40,8 @@ class Api::GalleriesController < ApplicationController
     def update
       
         @gallery = Gallery.find(params[:id])
-        if @gallery.update(state: params[:gallery][:state])
+    
+        if @gallery.update(state: params[:state])
           render :show
         else
             render json: @cart_item.errors.full_messages, status: 422          

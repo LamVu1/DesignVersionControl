@@ -7,5 +7,10 @@ class Gallery < ApplicationRecord
     class_name: :User,
     foreign_key: :user_id
 
+    has_many :comments,
+    primary_key: :id,
+    foreign_key: :gallery_id,
+    class_name: :Comment
+
 
 end
